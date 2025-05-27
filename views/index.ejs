@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>WhereToTravelNext</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Let's find somewhere for you to visit 🗺️</h1>
+    <form action="/" id="form" class="form" method="POST">
+      <select name="type" class="form-select">
+        <option value="" data-display="Select a continent">Random one</option>
+        <option value="asia">Asia</option>
+        <option value="africa">Africa</option>
+        <option value="north america">North America</option>
+        <option value="south america">South America</option>
+        <option value="antartica">Antartica</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+      </select>
+      <button type="submit" class="form-submit">Go</button>
+  </div>
+
+  <section id="card" class="card-item">
+    <%if (dataC){%>
+    <div class="card-country">
+      <p class="card-continent">The continent you selected is <%=dataC.continent%>.<br>
+      </p>
+      <h2 class="country-name">
+        The country you get is <%=dataC.country%>!
+      </h2>
+      <div class="card-info">
+        <span class="country-capital">
+          Capital: <%=dataC.capital%>
+        </span> 
+        <span class="country-currency">
+          Currency: <%=dataC.currency%>
+        </span>
+        <span class="country-language">
+          Language: <%=dataC.language%>
+        </span>
+      </div>
+      <%}%>
+
+      <%if (dataC.error) {%>
+        <div id="tag-error" class="tag-error">
+          <%=error%>
+        </div>
+        <%}%>
+    </div>
+  </section>
+  <section class="footer">
+    <p>
+      Made with ❤️ by Chloe Yang
+    </p>
+  </section>
+
+</body>
+
+</html>
