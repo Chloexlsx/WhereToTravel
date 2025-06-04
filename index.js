@@ -4,7 +4,7 @@ import axios from "axios";
 
 const app = express();
 const port = 3000;
-
+app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -68,7 +68,7 @@ app.post("/", async (req, res) => {
     const countryData = {continent, country, capital, language, currency};
 
     //Render
-    res.render("index.ejs", { dataC: countryData });
+    res.render("index.ejs", { data: countryData });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.render("index.ejs", {

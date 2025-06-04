@@ -26,27 +26,27 @@
   </div>
 
   <section id="card" class="card-item">
-    <%if (dataC){%>
+    <%if (data){%>
     <div class="card-country">
-      <p class="card-continent">The continent you selected is <%=dataC.continent%>.<br>
+      <p class="card-continent">The continent you selected is <%=data.continent%>.<br>
       </p>
       <h2 class="country-name">
-        The country you get is <%=dataC.country%>!
+        The country you get is <%=data.country%>!
       </h2>
       <div class="card-info">
         <span class="country-capital">
-          Capital: <%=dataC.capital%>
+          Capital: <%=data.capital%>
         </span> 
         <span class="country-currency">
-          Currency: <%=dataC.currency%>
+          Currency: <%=data.currency%>
         </span>
         <span class="country-language">
-          Language: <%=dataC.language%>
+          Language: <%=data.language%>
         </span>
       </div>
       <%}%>
 
-      <%if (dataC.error) {%>
+      <%if (data.error) {%>
         <div id="tag-error" class="tag-error">
           <%=error%>
         </div>
