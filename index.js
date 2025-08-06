@@ -9,7 +9,6 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
-  
   try {
     //Fetch
     const URL = `https://restcountries.com/v3.1/region/asia`;
@@ -31,7 +30,7 @@ app.get("/", async (req, res) => {
     console.log(currency);
     const countryData = {country, capital, language, currency};
 
-    //Render
+    //Render the country data to the index.ejs
     res.render("index.ejs", { data: countryData });
   } catch (error) {
     console.error("Failed to make request:", error.message);
